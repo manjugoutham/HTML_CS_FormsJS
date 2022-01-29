@@ -59,7 +59,7 @@
             <button>Submit</button>
         </div>
     </form>
-    
+
     <script>
         const text = document.querySelector('#text');
         const texterror =document.querySelector('.text-error');
@@ -76,6 +76,16 @@
         salary.addEventListener('input',function()
         {
             output.textContent =  salary.value;
+        });
+
+        const email = document.querySelector('#email');
+        const emailerror =document.querySelector('.email-error');
+        email.addEventListener('input',function()
+        {
+            let nameRegex = RegExp('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$');
+            if(nameRegex.test(email.value))
+            emailerror.textContent = " ";
+            else emailerror.textContent = "Email is Inncorrect";
         });
     </script>
 </body>
